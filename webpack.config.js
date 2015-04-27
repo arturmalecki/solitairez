@@ -2,8 +2,8 @@ module.exports = {
   context: __dirname + "/js",
   entry: './main.js',
   output: {
-    path: __dirname + "/disc",
-    publicPath: "/disc/",
+    path: __dirname + "/dist",
+    publicPath: "/dist/",
     filename: 'build.js'
   },
   module: {
@@ -14,12 +14,14 @@ module.exports = {
   resolve: {
     alias: {
       css: __dirname + "/css",
-      pahser: __dirname + "/js/libs/phaser",
-      backbone: __dirname + "/js/libs/backbone",
-      underscore: __dirname + "/js/libs/underscore",
-      jquery: __dirname + "/js/libs/jquery",
-      views: __dirname + "/js/views"
+      phaser: __dirname + "/node_modules/phaser/dist/phaser",
+      backbone: __dirname + "/node_modules/backbone/backbone",
+      underscore: __dirname + "/node_modules/underscore/underscore",
+      jquery: __dirname + "/node_modules/jquery/dist/jquery",
+      views: __dirname + "/js/views",
+      templates: __dirname + "/templates",
+      game: __dirname + "/js/game"
     },
-    extensions: ["", ".js", ".css"]
+    extensions: ["", ".js", ".css", ".html"]
   }
 };

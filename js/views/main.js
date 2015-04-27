@@ -1,9 +1,16 @@
-define(['jquery', 'underscore', 'backbone'], function($, _, Backbone) {
-  var view = Backbone.View.extend({
+define([
+  'jquery',
+  'underscore',
+  'backbone',
+  'text!templates/main',
+  'views/main_menu'
+], function($, _, Backbone, mainTemplate, mainMenuView) {
+  return Backbone.View.extend({
+    el: "#solitairez",
+    template: _.template(mainTemplate),
     initialize: function() {
-      console.log('initialized')
+      this.$el.html(this.template);
+      (new mainMenuView()).render();
     }
-  })
-
-  return view;
+  });
 });
