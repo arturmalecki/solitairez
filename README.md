@@ -13,3 +13,5 @@ Solitaire game made in javascript.
 `npm install`
 
 and use some kind of webserver, I'm using [serve](https://rubygems.org/gems/serve/versions/3.0.0)
+
+`serve`
