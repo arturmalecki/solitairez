@@ -16,16 +16,14 @@ define(["game/card",
     this.checkWinState = new CheckWinState(this);
     this.upkeepState = new UpkeepState(this);
     this.idleState = new IdleState(this);
-    this.performActionState = new ProcessActionState(this);
+    this.processActionState = new ProcessActionState(this);
     this.state;
   }
 
   GameManager.prototype = {
     start: function() {
-      //var board = new Board(game);
       this.state = this.initState;
       this.state.entryAction();
-
     },
 
     update: function() {
@@ -33,6 +31,10 @@ define(["game/card",
       if(state !== undefined) {
         this.state = state;
       }
+    },
+
+    changeStateTo: function(stateName) {
+      this.state = this[stateName];
     }
   }
   GameManager.prototype.constructor = GameManager;
